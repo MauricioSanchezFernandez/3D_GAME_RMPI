@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 public class FPSController : MonoBehaviour
 {
     #region General Variables
+    [Header("Health")]
+    [SerializeField] int maxHealth = 100;
+    int currentHealth;
+
     [Header("Movement & Look")]
     [SerializeField] GameObject camHolder; //Ref al objeto que tiene como hijo la cámara (rota por la cámara)
     [SerializeField] float speed = 5f;
@@ -46,6 +50,10 @@ public class FPSController : MonoBehaviour
         //Lock del cursor del ratón
         Cursor.lockState = CursorLockMode.Locked; //Mueve el cursor al centro
         Cursor.visible = false; //Oculta el cursor de la vista
+        currentHealth = maxHealth;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -100,6 +108,23 @@ public class FPSController : MonoBehaviour
     {
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        Debug.Log("Vida actual: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Has muerto");
     }
 
 
