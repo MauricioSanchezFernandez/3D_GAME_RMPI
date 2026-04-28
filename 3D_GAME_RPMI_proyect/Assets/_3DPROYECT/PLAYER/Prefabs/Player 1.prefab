@@ -32,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4150117451482516601}
   - {fileID: 896122416000405428}
   m_Father: {fileID: 7514237078186540989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,37 +138,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &3613247004954174451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4150117451482516601}
-  m_Layer: 0
-  m_Name: 'Gun (Missing Prefab with guid: b89c3c0f9568e5e4c9566ac797b131a6)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4150117451482516601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3613247004954174451}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9992058, z: -0, w: 0.039845143}
-  m_LocalPosition: {x: 0.346, y: -0.229, z: 1.331}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1220877509803025748}
-  m_LocalEulerAnglesHint: {x: 0, y: 175.433, z: 0}
 --- !u!1 &3867306090474344050
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +215,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8630589198496751675}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c3f0ba131378a364f8e7ac7079308160, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -502,7 +470,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   spread: 0
-  shootingCooldown: 0.2
+  shootingCooldown: 1
   reloadTime: 1.5
   allowButtonHold: 0
   ammoSize: 30
