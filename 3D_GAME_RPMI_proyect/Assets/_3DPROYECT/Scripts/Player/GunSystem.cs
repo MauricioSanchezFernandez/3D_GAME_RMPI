@@ -36,10 +36,14 @@ public class GunSystem : MonoBehaviour
 
     #endregion
 
+    Animator anim; //Ref al animator del player
+
+
     private void Awake()
     {
         bulletsLeft = ammoSize; //Al iniciar la partida tenemos el cargador lleno 
         canShot = true; //Al iniciar la partida tenemos la posibilidad de disparar
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -118,12 +122,17 @@ public class GunSystem : MonoBehaviour
         if (allowButtonHold)
         {
             shooting = context.ReadValueAsButton(); //Detecta constantemente si el boton de disparo esta apretado
+            anim.SetBool("isShooting", shooting);
         }
         else
         {
             if (context.performed) shooting = true; //Shooting solo es true por pulsacion
+            anim.SetBool("isShooting", shooting);
         }
+        
+
     }
+
 
     public void OnReload(InputAction.CallbackContext context)
     {

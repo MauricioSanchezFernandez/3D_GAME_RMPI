@@ -46,12 +46,16 @@ public class Enemy_AI_Base : MonoBehaviour
     Vector3 lastPosition; //Posición del último walkpoint perseguido
     #endregion
 
+
+    Animator anim; //Ref al animator
+
     private void Awake()
     {
         //Validación por si no encontramos al "Player" por nombre, para evitar NullReferenceExceptions
         GameObject playerObj = GameObject.Find("Player");
         if (playerObj != null) target = playerObj.transform;
 
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         lastPosition = transform.position;
         lastCheckTime = Time.time;
@@ -154,21 +158,26 @@ public class Enemy_AI_Base : MonoBehaviour
                 walkPointSet = true; //Tenemos punto y el agente va hacia él
             }
         }
+
+        
+
     }
 
     void ChaseTarget()
     {
         //Le dice al agente que persiga al target
         agent.SetDestination(target.position);
+        anim.SetBool("isChasing", targetInSightRange);
     }
 
     void AttackTarget()
     {
     // Se queda quieto
     agent.SetDestination(transform.position);
+       
 
-    // Mira al jugador
-    Vector3 direction = (target.position - transform.position);
+        // Mira al jugador
+        Vector3 direction = (target.position - transform.position);
     direction.y = 0;
 
     if (direction != Vector3.zero)
@@ -194,7 +203,7 @@ public class Enemy_AI_Base : MonoBehaviour
 void PerformAttack()
 {
     Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRadius, targetLayer);
-
+     anim.SetBool("isAttacking", targetInAttackRange);
     foreach (Collider hit in hits)
     {
         PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
