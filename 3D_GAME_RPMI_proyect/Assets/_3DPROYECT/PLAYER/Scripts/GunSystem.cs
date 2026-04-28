@@ -10,6 +10,7 @@ public class GunSystem : MonoBehaviour
     [SerializeField] Camera fpsCam; //Ref si disparamos desde el cento de la camara
     [SerializeField] Transform shootPoint; // Ref si queremos disparar desde la punta del cañón
     [SerializeField] LayerMask impactLayer; //Layer con la que el Raycast interactua
+    [SerializeField] GameObject bloodEffect;
     RaycastHit hit; //Almacén de la información de los objetos a los que el Raycast puede impactar
 
     [Header("Weapon Parameters")]
@@ -90,6 +91,7 @@ public class GunSystem : MonoBehaviour
             {
                 EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
                 enemyHealth.TakeDamage(damage);
+                 Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
             }
 
         }

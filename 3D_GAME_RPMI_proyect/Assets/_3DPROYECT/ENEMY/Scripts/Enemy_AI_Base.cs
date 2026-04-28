@@ -23,11 +23,12 @@ public class Enemy_AI_Base : MonoBehaviour
 
     [Header("Attacking Stats")]
     [SerializeField] float timeBetweenAttacks = 1f; //Tiempo entre ataque y ataque
-    [SerializeField] GameObject projectile; //Ref al prefab del proyectil
-    [SerializeField] Transform shootPoint; //Posición inicial del disparo
-    [SerializeField] float shootSpeedY; //Potencia de disparo vertical (Solo catapulta)
-    [SerializeField] float shootSpeedZ = 10f; //Potencia de disparo hacia delante (Siempre está)
     bool alreadyAttacked; //Se pregunta si estamos atacando para no stackear ataques
+
+    [Header("Melee Attack")]
+    [SerializeField] float damage = 10f;
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRadius = 1.5f;
 
     [Header("States & Detection Areas")]
     [SerializeField] float sightRange = 8f; //Radio de la detección de persecución
@@ -163,38 +164,47 @@ public class Enemy_AI_Base : MonoBehaviour
 
     void AttackTarget()
     {
-        //Acción que determina el ataque al objetivo
+    // Se queda quieto
+    agent.SetDestination(transform.position);
 
-        //1- Detener el movimiento
-        agent.SetDestination(transform.position);
+    // Mira al jugador
+    Vector3 direction = (target.position - transform.position);
+    direction.y = 0;
 
-        //2- Rotación suavizada para mirar al target
-        Vector3 direction = (target.position - transform.position).normalized;
-
-        // OPCIONAL: Anulamos el eje Y para que el enemigo no se incline hacia arriba o abajo si el jugador salta
-        direction.y = 0;
-
-        //Condicional que revisa si agente y target NO se están mirando
-        if (direction != Vector3.zero)
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, agent.angularSpeed * Time.deltaTime);
-        }
-
-        //3- Definir el ataque en sí
-        //Solo atacará si no se está atacando
-        if (!alreadyAttacked)
-        {
-            Rigidbody rb = Instantiate(projectile, shootPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-
-
-            rb.AddForce(transform.forward * shootSpeedZ + transform.up * shootSpeedY, ForceMode.Impulse);
-
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
+    if (direction != Vector3.zero)
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation,
+            lookRotation,
+            agent.angularSpeed * Time.deltaTime
+        );
     }
 
+    // Ataque con cooldown
+    if (!alreadyAttacked)
+    {
+        PerformAttack();
+
+        alreadyAttacked = true;
+        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+    }
+}
+
+void PerformAttack()
+{
+    Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRadius, targetLayer);
+
+    foreach (Collider hit in hits)
+    {
+        PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+    }
+}
     void ResetAttack()
     {
         //Acción que resetea el ataque
