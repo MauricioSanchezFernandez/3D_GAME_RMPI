@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 6671124903579149668}
   - component: {fileID: 2622801720681543047}
   m_Layer: 7
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,6 +467,7 @@ MonoBehaviour:
   impactLayer:
     serializedVersion: 2
     m_Bits: 64
+  bloodEffect: {fileID: 0}
   damage: 10
   range: 100
   spread: 0
