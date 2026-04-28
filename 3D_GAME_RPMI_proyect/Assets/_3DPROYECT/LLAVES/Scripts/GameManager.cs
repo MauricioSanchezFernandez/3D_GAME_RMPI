@@ -8,21 +8,19 @@ public class GameManager : MonoBehaviour
     public int silverKeys = 0;
     public int goldKeys = 0;
 
-    public GameObject goldKeyObject;
+    public TextMeshProUGUI silverText;
+    public TextMeshProUGUI goldText;
 
-    public TextMeshProUGUI keyText;
-    public GameObject messageText;
+    public GameObject goldenKey;
 
     private void Awake()
     {
         instance = this;
     }
 
-    void Start()
+    private void Start()
     {
         UpdateUI();
-        messageText.SetActive(false);
-        goldKeyObject.SetActive(false);
     }
 
     public void AddSilverKey()
@@ -32,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         if (silverKeys >= 2)
         {
-            goldKeyObject.SetActive(true); // aparece la dorada
+            goldenKey.SetActive(true);
         }
     }
 
@@ -40,21 +38,11 @@ public class GameManager : MonoBehaviour
     {
         goldKeys++;
         UpdateUI();
-
-        if (goldKeys >= 1)
-        {
-            messageText.SetActive(true);
-        }
     }
 
     void UpdateUI()
     {
-        int totalKeys = silverKeys + goldKeys;
-        keyText.text = "Llaves: " + totalKeys + "/3";
-    }
-
-    public bool HasAllKeys()
-    {
-        return silverKeys >= 2 && goldKeys >= 1;
+        silverText.text = silverKeys.ToString();
+        goldText.text = goldKeys.ToString();
     }
 }

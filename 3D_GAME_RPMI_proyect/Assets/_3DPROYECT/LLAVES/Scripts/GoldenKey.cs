@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoldKey : MonoBehaviour
+public class GoldenKey : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
