@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI goldText;
 
     public GameObject goldenKey;
+    public GameObject door2;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         if (silverKeys >= 2)
         {
             goldenKey.SetActive(true);
+            
         }
     }
 
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         goldKeys++;
         UpdateUI();
+        door2.SetActive(true);
     }
 
     void UpdateUI()
