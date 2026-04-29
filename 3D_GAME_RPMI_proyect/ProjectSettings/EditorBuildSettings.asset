@@ -15,14 +15,11 @@ EditorBuildSettings:
     path: Assets/_3DPROYECT/Scenes/2SCN2_CASTLEFINAL.unity
     guid: 05d3fb68c08fd85498eed61bcf478d1a
   - enabled: 1
-    path: Assets/_3DPROYECT/Scenes/3SCN_PAUSA.unity
-    guid: 6b42340bd407afa4baa8cf6ecc2b1f04
-  - enabled: 1
-    path: Assets/_3DPROYECT/Scenes/4SNC_DEATH.unity
+    path: Assets/_3DPROYECT/Scenes/3SNC_DEATH.unity
     guid: 19208021c224ad941945b90b17fe4d05
   - enabled: 1
-    path: Assets/_3DPROYECT/Scenes/5SNC_WIN.unity
-    guid: cdc186aa1b0503145ac0a9c837de1b97
+    path: Assets/_3DPROYECT/Scenes/4SNC_WIN.unity
+    guid: 501145cbc7e60bb4783842b0fca00200
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

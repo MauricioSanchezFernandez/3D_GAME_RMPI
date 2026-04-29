@@ -35,6 +35,8 @@ public class FPSController : MonoBehaviour
     Rigidbody rb; //Ref al rigidbody del player
     Animator anim; //Ref al animator del player
 
+    public GameObject container; //pausa
+
     //Variables para el input
     Vector2 moveInput;
     Vector2 lookInput;
@@ -65,6 +67,20 @@ public class FPSController : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
         //Dibujar rayo ficiticio en escena para determinar la orientacion de la camara
         Debug.DrawRay(camHolder.transform.position, camHolder.transform.forward * 100f, Color.red);
+        //
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            container.SetActive(true);
+            Time.timeScale = 0;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
+
+
+
 
     }
 
@@ -127,9 +143,34 @@ public class FPSController : MonoBehaviour
     }
 }
 
-void Die()
+
+    //
+    
+
+  
+
+
+    public void ResumeButton()
+    {
+        container.SetActive(false);
+        Time.timeScale = 1;
+        //Lock del cursor del ratón
+        Cursor.lockState = CursorLockMode.Locked; //Mueve el cursor al centro
+        Cursor.visible = false; //Oculta el cursor de la vista
+
+
+    }
+    public void MainMenuButton()
+    {
+        SceneManager.LoadSceneAsync(0);
+
+    }
+
+
+
+    void Die()
 {
-    SceneManager.LoadScene("4SCN_DEATH");
+    SceneManager.LoadScene("3SCN_DEATH");
 }
 
 
