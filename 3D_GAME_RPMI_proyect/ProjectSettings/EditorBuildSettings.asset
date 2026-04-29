@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 19208021c224ad941945b90b17fe4d05
   - enabled: 1
     path: Assets/_3DPROYECT/Scenes/5SNC_WIN.unity
-    guid: 5402d90b230c70448a616c9221583548
+    guid: cdc186aa1b0503145ac0a9c837de1b97
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
