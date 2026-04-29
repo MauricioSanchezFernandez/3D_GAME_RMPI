@@ -87,10 +87,32 @@ public class Enemy_AI_Base : MonoBehaviour
             targetInAttackRange = false;
         }
 
+        // RESET de animaciones (muy importante)
+        anim.SetBool("isPatrolling", false);
+        anim.SetBool("isChasing", false);
+        anim.SetBool("isAttacking", false);
+
         //Lógica de los cambios de estado
-        if (!targetInSightRange && !targetInAttackRange) Patroling();
-        else if (targetInSightRange && !targetInAttackRange) ChaseTarget();
-        else if (targetInSightRange && targetInAttackRange) AttackTarget();
+        if (!targetInSightRange && !targetInAttackRange)
+        {
+            Patroling();
+            anim.SetBool("isPatrolling", true);
+
+        }
+        else if (targetInSightRange && !targetInAttackRange)
+        {
+            ChaseTarget();
+            anim.SetBool("isChasing", true);
+        }
+
+
+        else if (targetInSightRange && targetInAttackRange)
+        {
+            AttackTarget();
+            anim.SetBool("isAttacking", true);
+        }   
+            
+            
     }
 
     void Patroling()
@@ -153,7 +175,7 @@ public class Enemy_AI_Base : MonoBehaviour
     {
         //Le dice al agente que persiga al target
         agent.SetDestination(target.position);
-        anim.SetBool("isChasing", targetInSightRange);
+        
     }
 
     void AttackTarget()
@@ -180,8 +202,8 @@ public class Enemy_AI_Base : MonoBehaviour
     if (!alreadyAttacked)
     {
         PerformAttack();
-
-        alreadyAttacked = true;
+            //anim.SetTrigger("Attack");
+            alreadyAttacked = true;
         Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
 }
@@ -189,7 +211,7 @@ public class Enemy_AI_Base : MonoBehaviour
 void PerformAttack()
 {
     Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRadius, targetLayer);
-     anim.SetBool("isAttacking", targetInAttackRange);
+    
     foreach (Collider hit in hits)
     {
         PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
