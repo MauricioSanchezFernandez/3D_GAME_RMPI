@@ -94,49 +94,35 @@ public class Enemy_AI_Base : MonoBehaviour
     }
 
     void Patroling()
+{
+    if (useWaypoints && waypoints.Length > 0)
     {
-        //Define que el objeto patrulle y genere puntos de patrulla random
-        //1 - Revisa si hay punto a patrullar
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
+
+        if (!agent.pathPending && agent.remainingDistance <= 0.5f)
+        {
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        }
+    }
+    else
+    {
+        // Patrulla random (tu sistema original)
         if (!walkPointSet)
         {
-            //Switch entre Random o Waypoints basado en el bool del Inspector
-            if (useWaypoints && waypoints.Length > 0)
-            {
-                walkPoint = waypoints[currentWaypointIndex].position;
-                walkPointSet = true;
-            }
-            else
-            {
-                //Si no hay walkpoint, busca uno
-                SearchWalkPoint();
-            }
+            SearchWalkPoint();
         }
 
-        // Sacamos la orden de moverse del 'else'. 
-        // Así, en cuanto se genera el punto (en el mismo frame), el agente empieza a moverse.
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
         }
 
-        //2 - Una vez ha llegado al punto, hay que decirle al sistema que puede generar uno nuevo
-        // Cambiamos stoppingDistance por un valor fijo pequeño (0.5f).
-        // Esto evita que se quede bloqueado por problemas de precisión decimal al detenerse.
         if (!agent.pathPending && agent.remainingDistance <= 0.5f && walkPointSet)
         {
             walkPointSet = false;
-
-            // Si estamos en modo Waypoints, incrementamos el índice para ir al siguiente
-            if (useWaypoints && waypoints.Length > 0)
-            {
-                currentWaypointIndex++;
-                if (currentWaypointIndex >= waypoints.Length)
-                {
-                    currentWaypointIndex = 0; // Volvemos al punto cero si llegamos al final del array
-                }
-            }
         }
     }
+}
 
     void SearchWalkPoint()
     {

@@ -5,18 +5,24 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("Keys")]
     public int silverKeys = 0;
     public int goldKeys = 0;
 
-    public TextMeshProUGUI silverText;
-    public TextMeshProUGUI goldText;
-
-    public GameObject goldenKey;
-    public GameObject door2;
+    [Header("UI")]
+    [SerializeField] TextMeshProUGUI silverText;
+    [SerializeField] TextMeshProUGUI goldText;
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -24,28 +30,38 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
+    // LLAVE PLATA
     public void AddSilverKey()
     {
         silverKeys++;
         UpdateUI();
-
-        if (silverKeys >= 2)
-        {
-            goldenKey.SetActive(true);
-            
-        }
     }
 
+    // LLAVE DORADA
     public void AddGoldKey()
     {
         goldKeys++;
         UpdateUI();
-        door2.SetActive(true);
     }
 
+    // CHECKS (MUY ÚTILES)
+    public bool HasSilverKeys(int amount)
+    {
+        return silverKeys >= amount;
+    }
+
+    public bool HasGoldKey()
+    {
+        return goldKeys > 0;
+    }
+
+    // UI
     void UpdateUI()
     {
-        silverText.text = silverKeys.ToString();
-        goldText.text = goldKeys.ToString();
+        if (silverText != null)
+            silverText.text = silverKeys.ToString();
+
+        if (goldText != null)
+            goldText.text = goldKeys.ToString();
     }
 }

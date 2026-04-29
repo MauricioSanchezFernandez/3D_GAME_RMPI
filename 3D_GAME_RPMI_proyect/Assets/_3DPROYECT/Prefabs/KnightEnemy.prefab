@@ -125,8 +125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623638945645130353}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.018, z: 44.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 75.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -205,18 +205,21 @@ MonoBehaviour:
   target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  walkPointRange: 8
-  useWaypoints: 0
-  waypoints: []
+  walkPointRange: 50
+  useWaypoints: 1
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timeBetweenAttacks: 1
   damage: 10
   attackPoint: {fileID: 8282997804898226779}
   attackRadius: 1.5
-  sightRange: 8
+  sightRange: 7
   attackRange: 2
   targetInSightRange: 0
   targetInAttackRange: 0

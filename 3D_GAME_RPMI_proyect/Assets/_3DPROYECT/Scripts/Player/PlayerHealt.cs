@@ -1,12 +1,15 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100f;
     public float health;
 
-    public Action<float> OnHealthChanged; // <-- evento para la UI
+    public Action<float> OnHealthChanged;
+
+    bool isDead = false; //  importante
 
     private void Awake()
     {
@@ -15,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        if (isDead) return; //  evita daño después de morir
+
         health -= dmg;
 
         if (health < 0)
@@ -25,15 +30,20 @@ public class PlayerHealth : MonoBehaviour
         float healthPercent = health / maxHealth;
         OnHealthChanged?.Invoke(healthPercent);
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
+            isDead = true;
             Die();
         }
     }
 
     void Die()
     {
-        Debug.Log("Player muerto");
-        // aquí puedes meter respawn o pantalla de muerte
+
+        // Opcional: parar el tiempo
+        Time.timeScale = 1f;
+
+        // Cargar escena de muerte
+        SceneManager.LoadScene(4);
     }
 }

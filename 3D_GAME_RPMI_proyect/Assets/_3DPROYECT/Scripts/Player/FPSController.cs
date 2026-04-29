@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class FPSController : MonoBehaviour
     [Header("Player State Bools")]
     [SerializeField] bool isSprinting;
     [SerializeField] bool isCrouching;
+    bool isDead = false;
     #endregion
 
     //Variables de referencia privadas
@@ -112,20 +114,23 @@ public class FPSController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+    if (isDead) return; //  evita daño después de morir
 
-        Debug.Log("Vida actual: " + currentHealth);
+    currentHealth -= damage;
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
+    Debug.Log("Vida actual: " + currentHealth);
 
-    void Die()
+    if (currentHealth <= 0 && !isDead)
     {
-        Debug.Log("Has muerto");
+        isDead = true;
+        Die();
     }
+}
+
+void Die()
+{
+    SceneManager.LoadScene("4SCN_DEATH");
+}
 
 
     #region Input Methods
