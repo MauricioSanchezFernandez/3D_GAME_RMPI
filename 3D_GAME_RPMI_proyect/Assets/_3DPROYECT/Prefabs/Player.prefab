@@ -414,8 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
   maxHealth: 100
   camHolder: {fileID: 8846877423496885008}
-  speed: 5
-  sprintSpeed: 8
+  speed: 6
+  sprintSpeed: 10
   crouchSpeed: 3
   maxForce: 1
   sensitivity: 0.1

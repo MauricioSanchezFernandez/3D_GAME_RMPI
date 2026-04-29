@@ -346,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3772398}
   - component: {fileID: 3772399}
+  - component: {fileID: 3772400}
   m_Layer: 0
   m_Name: Collider_S.3
   m_TagString: Untagged
@@ -389,6 +390,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0783886, y: 0.33813703, z: 9.002637}
   m_Center: {x: -0.0067625204, y: 0.1654164, z: -3.5113583}
+--- !u!208 &3772400
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772397}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4326784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2449,7 +2466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &86325211
 Transform:
   m_ObjectHideFlags: 0
@@ -6535,6 +6552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215574605}
   - component: {fileID: 215574604}
+  - component: {fileID: 215574606}
   m_Layer: 0
   m_Name: Collider_Corner4
   m_TagString: Untagged
@@ -6578,6 +6596,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: 52.189, z: 0}
+--- !u!208 &215574606
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215574603}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &217168969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9845,6 +9879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312058278}
   - component: {fileID: 312058277}
+  - component: {fileID: 312058279}
   m_Layer: 0
   m_Name: Collider_E
   m_TagString: Untagged
@@ -9888,6 +9923,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!208 &312058279
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312058276}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &312658754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26256,6 +26307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 804123346}
   - component: {fileID: 804123347}
+  - component: {fileID: 804123348}
   m_Layer: 0
   m_Name: Collider_S.1
   m_TagString: Untagged
@@ -26299,6 +26351,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4416358, y: 1, z: 7.4781165}
   m_Center: {x: -0.25330523, y: 0, z: -3.2390583}
+--- !u!208 &804123348
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804123345}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &806606413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9203078988397562741, guid: 5b92ac209d2baad45bebaa364a28ffc5, type: 3}
@@ -27203,6 +27271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845083659}
   - component: {fileID: 845083658}
+  - component: {fileID: 845083660}
   m_Layer: 0
   m_Name: Collider_N
   m_TagString: Untagged
@@ -27246,6 +27315,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &845083660
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845083657}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &848042503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27577,6 +27662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859449568}
   - component: {fileID: 859449567}
+  - component: {fileID: 859449569}
   m_Layer: 0
   m_Name: Collider_Corner3
   m_TagString: Untagged
@@ -27620,6 +27706,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: -52.189, z: 0}
+--- !u!208 &859449569
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859449566}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &859933965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30500,6 +30602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937141796}
   - component: {fileID: 937141795}
+  - component: {fileID: 937141797}
   m_Layer: 0
   m_Name: Collider_Corner1
   m_TagString: Untagged
@@ -30543,6 +30646,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: -52.189, z: 0}
+--- !u!208 &937141797
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937141794}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &937750320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49961,6 +50080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552775932}
   - component: {fileID: 1552775933}
+  - component: {fileID: 1552775934}
   m_Layer: 0
   m_Name: Collider_S.2
   m_TagString: Untagged
@@ -50004,6 +50124,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4859954, y: 1, z: 7.532766}
   m_Center: {x: 0.25700226, y: 0, z: -3.266382}
+--- !u!208 &1552775934
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552775931}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1556103322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2714915027346226041, guid: 3e4636a46538f4c48803fce2dedddf8a, type: 3}
@@ -50558,6 +50694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566768622}
   - component: {fileID: 1566768621}
+  - component: {fileID: 1566768623}
   m_Layer: 0
   m_Name: Collider_Corner2
   m_TagString: Untagged
@@ -50601,6 +50738,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: 52.189, z: 0}
+--- !u!208 &1566768623
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566768620}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1567021041
 GameObject:
   m_ObjectHideFlags: 0
@@ -59485,6 +59638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1879514020}
   - component: {fileID: 1879514019}
+  - component: {fileID: 1879514021}
   m_Layer: 0
   m_Name: Collider_O
   m_TagString: Untagged
@@ -59528,6 +59682,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 15432507}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!208 &1879514021
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879514018}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1880654659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68409,6 +68579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2077616380}
     m_Modifications:
+    - target: {fileID: 1573154278603018310, guid: 6f81c62a6b8e7494487a9ed080213967, type: 3}
+      propertyPath: door2
+      value: 
+      objectReference: {fileID: 86325210}
     - target: {fileID: 3997883497382716546, guid: 6f81c62a6b8e7494487a9ed080213967, type: 3}
       propertyPath: m_Name
       value: GoldKey
