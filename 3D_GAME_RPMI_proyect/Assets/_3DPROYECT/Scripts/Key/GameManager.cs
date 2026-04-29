@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("Keys")]
     public int silverKeys = 0;
     public int goldKeys = 0;
+    public GameObject goldenKey;
 
     [Header("UI")]
     [SerializeField] TextMeshProUGUI silverText;
@@ -35,6 +36,12 @@ public class GameManager : MonoBehaviour
     {
         silverKeys++;
         UpdateUI();
+
+         if (silverKeys >= 2)
+    {
+        ActivateGoldenKey();
+    }
+
     }
 
     // LLAVE DORADA
@@ -64,4 +71,13 @@ public class GameManager : MonoBehaviour
         if (goldText != null)
             goldText.text = goldKeys.ToString();
     }
+
+    void ActivateGoldenKey()
+{
+    if (goldenKey != null)
+    {
+        goldenKey.SetActive(true);
+        Debug.Log("Golden Key Activated!");
+    }
+}
 }
