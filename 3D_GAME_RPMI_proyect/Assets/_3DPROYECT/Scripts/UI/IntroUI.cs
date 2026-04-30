@@ -1,20 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // IMPORTANTE (nuevo input system)
 
 public class IntroUI : MonoBehaviour
 {
-    [SerializeField] GameObject introPanel;
+    public GameObject panelIntro;
 
     void Start()
     {
-        introPanel.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // pausa el juego
+        panelIntro.SetActive(true);
     }
 
     void Update()
     {
-        // Si pulsas Enter
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        if (Time.timeScale == 0f && Keyboard.current.anyKey.wasPressedThisFrame)
         {
             OnContinue();
         }
@@ -22,7 +21,7 @@ public class IntroUI : MonoBehaviour
 
     public void OnContinue()
     {
-        introPanel.SetActive(false);
+        panelIntro.SetActive(false);
         Time.timeScale = 1f;
     }
 }
