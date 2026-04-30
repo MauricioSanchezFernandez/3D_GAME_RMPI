@@ -1,22 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // IMPORTANTE (nuevo input system)
+using System.Collections;
 
 public class IntroUI : MonoBehaviour
 {
     public GameObject panelIntro;
+    public float tiempo = 3f; // segundos que dura el texto
 
-    void Start()
+    IEnumerator Start()
     {
-        Time.timeScale = 0f; // pausa el juego
+        Time.timeScale = 0f;
         panelIntro.SetActive(true);
-    }
 
-    void Update()
-    {
-        if (Time.timeScale == 0f && Keyboard.current.anyKey.wasPressedThisFrame)
-        {
-            OnContinue();
-        }
+        yield return new WaitForSecondsRealtime(tiempo);
+
+        OnContinue();
     }
 
     public void OnContinue()
