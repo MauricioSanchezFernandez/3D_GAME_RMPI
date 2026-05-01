@@ -801,8 +801,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "How to play:\nUser WASD to move\nLeft click to shoot \nSpace to jump\nControl
-    to crouch\nShift to run\nYou have to find the tree keys for open the castle,
-    and avoid the enemies!\n\n\n"
+    to crouch\nShift to run\nYou have to find the tree keys to open the castle, and
+    avoid the enemies!\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2171,7 +2171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1676433224
 RectTransform:
   m_ObjectHideFlags: 0
