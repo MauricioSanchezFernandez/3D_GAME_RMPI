@@ -6,7 +6,8 @@ public class Door1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        anim.Play("Open_BigDoor1_Anim");
+        anim.SetBool("isPlayer", true);
+        
     }
 
 }
