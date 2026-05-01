@@ -72,6 +72,7 @@ public class GunSystem : MonoBehaviour
         //Espera entre disparos
         yield return new WaitForSeconds(shootingCooldown);
         canShot = true; //Resetea la posibilidad de disparar
+        anim.SetBool("isShooting", false);
     }
 
     void Shoot()
