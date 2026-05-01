@@ -12,6 +12,8 @@ public class SceneLoader : MonoBehaviour
             if (!string.IsNullOrEmpty(NameScene))
             {
                 SceneManager.LoadScene(NameScene);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {

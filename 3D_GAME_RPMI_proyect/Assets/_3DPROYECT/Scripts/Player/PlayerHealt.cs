@@ -44,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 1f;
 
         // Cargar escena de muerte
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

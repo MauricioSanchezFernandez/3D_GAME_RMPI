@@ -6,7 +6,12 @@ public class Door1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        anim.SetBool("isPlayer", true);
+        if (other.CompareTag("Player"))
+        {
+            anim.SetBool("isPlayer", true);
+        }
+
+        
         
     }
 

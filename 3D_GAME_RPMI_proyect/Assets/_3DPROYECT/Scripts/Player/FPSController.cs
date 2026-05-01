@@ -164,14 +164,17 @@ public class FPSController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
 
+
     }
 
 
 
     void Die()
 {
-    SceneManager.LoadScene("3SCN_DEATH");
-}
+        SceneManager.LoadSceneAsync(3);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
 
     #region Input Methods

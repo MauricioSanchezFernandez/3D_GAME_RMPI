@@ -717,7 +717,6 @@ Transform:
   - {fileID: 752415978}
   - {fileID: 845083659}
   - {fileID: 1928695233}
-  - {fileID: 879345755}
   - {fileID: 2041426105}
   - {fileID: 1895913454}
   - {fileID: 472191885}
@@ -7781,7 +7780,6 @@ Transform:
   m_Children:
   - {fileID: 498358552}
   - {fileID: 86325211}
-  - {fileID: 1567021042}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &229733520 stripped
@@ -30532,7 +30530,7 @@ Transform:
   m_LocalScale: {x: 240.0526, y: 19.83728, z: 1.1131}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 15432507}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &879345756
 BoxCollider:
@@ -46781,11 +46779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 873228171133445414, guid: 45af097934444fd45805ef491e76c4db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94
+      value: 2.73
       objectReference: {fileID: 0}
     - target: {fileID: 873228171133445414, guid: 45af097934444fd45805ef491e76c4db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.56
+      value: -12.51
       objectReference: {fileID: 0}
     - target: {fileID: 873228171133445414, guid: 45af097934444fd45805ef491e76c4db, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53745,73 +53743,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &1567021041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1567021042}
-  - component: {fileID: 1567021044}
-  - component: {fileID: 1567021043}
-  m_Layer: 0
-  m_Name: Puerta3_abrir
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1567021042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567021041}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35, y: 0, z: 205.6}
-  m_LocalScale: {x: 11.525196, y: 41.57783, z: 20.05733}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 227279136}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1567021043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567021041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a777ffddf14ec44f8e0909408adeaa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WinDoor
-  winSceneName: 5SNC_WIN
---- !u!65 &1567021044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567021041}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1569131237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72657,6 +72588,7 @@ SceneRoots:
   - {fileID: 1350200030}
   - {fileID: 481454322}
   - {fileID: 470975379}
+  - {fileID: 879345755}
   - {fileID: 15432507}
   - {fileID: 633998031}
   - {fileID: 1898062502}
